@@ -17,7 +17,7 @@ body {
 
 .container {
     width: 600px;
-    height: 600px;
+    height: 900px;
     padding: 10px 22px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,5 +104,65 @@ body {
     border-radius: 6px;
     color: #333;
     font-size: 14px;
-  }
-  
+}
+
+/* Mobile: 375px */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .content img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .title-content p {
+        font-size: 13px;
+    }
+
+    .title-content .timestamp {
+        font-size: 11px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+}
+
+/* Desktop: 1440px+ */
+@media (min-width: 1440px) {
+    .container {
+        margin: 30px auto;
+        width: 900px;
+        height: 800px;
+        padding: 24px 32px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .title-content p {
+        font-size: 16px;
+    }
+
+    .title-content .timestamp {
+        font-size: 14px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
