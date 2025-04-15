@@ -1,0 +1,57 @@
+:root {
+    --red: hsl(1, 90%, 64%);
+    --blue: hsl(219, 85%, 26%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(210, 60%, 98%);
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    padding: 10px 22px;
+    background-color: hsl(210, 14%, 71%);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.content img {
+    width: 60px;
+    height: 60px;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 0 20px;
+    padding: 0;
+}
