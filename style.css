@@ -1,7 +1,32 @@
 :root {
-    --red: hsl(1, 90%, 64%);
+    --bg-color: #efefef;
     --blue: hsl(219, 85%, 26%);
+    --text-color: #000000;
+    --card-bg: hsl(210, 60%, 98%);
+    --content-bg: hsl(210, 60%, 98%);
+    --message-bg: hsl(205, 33%, 90%);
+    --hover-bg: hsl(205, 33%, 90%);
+    --timestamp-color: #888;
+    --toggle-bg: hsl(0, 0%, 89%);
 }
+
+.dark {
+    --bg-color: hsl(0, 0%, 15%);
+    --blue: hsl(219, 85%, 70%);
+    --text-color: #f0f0f0;
+    --card-bg: hsl(0, 0%, 20%);
+    --content-bg: hsl(0, 0%, 25%);
+    --message-bg: hsl(0, 0%, 30%);
+    --hover-bg: hsl(0, 0%, 35%);
+    --timestamp-color: #bbb;
+    --toggle-bg: hsl(0, 0%, 77%);
+
+}
+
+* {
+    transition: background-color 0.2s ease;
+}
+
 
 body {
     display: flex;
@@ -12,7 +37,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background-color: #efefef;
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -21,9 +46,8 @@ body {
     padding: 10px 22px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--content-bg);
     overflow-y: auto;
-
 }
 
 .header-content {
@@ -34,13 +58,13 @@ body {
 
 .header-content h2 {
     font-size: 22px;
-    color: #000000;
+    color: var(--text-color);
     font-weight: bold;
 }
 
 .header-content a {
     text-decoration: none;
-    color: #000000;
+    color: var(--text-color);
     font-weight: 400;
     font-size: 16px;
 }
@@ -54,7 +78,7 @@ body {
     align-items: flex-start;
     gap: 16px;
     padding: 16px;
-    background-color: hsl(210, 60%, 98%);
+    background-color: var(--card-bg);
     border-radius: 8px;
     margin-bottom: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -70,13 +94,13 @@ body {
 .title-content p {
     margin: 0;
     font-size: 14px;
-    color: #333;
-    line-height: 1.4;
+    color: var(--text-color);
+    line-height: 1.5;
 }
 
 .username, .desc {
     font-weight: 700;
-    color: #000000;
+    color: var(--text-color);
     /* biru elegan */
     margin-right: 4px;
     text-decoration: none;
@@ -100,10 +124,31 @@ body {
 .message {
     margin-top: 8px;
     padding: 12px;
-    background: hsl(205, 33%, 90%);
+    background: var(--message-bg);
     border-radius: 6px;
-    color: #333;
+    color: var(--text-color);
     font-size: 14px;
+}
+
+#toggleTheme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px;
+    background: var(--toggle-bg);
+    ;
+}
+
+#toggleTheme:hover {
+    background-color: hsl(210, 4%, 71%);
+}
+
+#toggleTheme img {
+    width: 24px;
+    height: 24px;
 }
 
 /* Mobile: 375px */
