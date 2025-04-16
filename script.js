@@ -7,7 +7,6 @@ const loadNotifications = async () => {
 
     const data = await res.json();
     const container = document.getElementById("content");
-    console.log(data);
 
     data.forEach((notif) => {
       const div = document.createElement("div");
@@ -39,20 +38,40 @@ const loadNotifications = async () => {
 
 loadNotifications();
 
-// Dark mode toggle
+// dark mode toggle
+
 const toggleDarkMode = document.getElementById("toggleTheme");
 const themeIcon = toggleDarkMode.querySelector("img");
+
+// Fungsi untuk update icon sesuai mode
+function updateThemeIcon(isDark) {
+  themeIcon.src = isDark
+    ? "assets/sun-svgrepo-com.svg"
+    : "assets/moon-dark-theme-svgrepo-com.svg";
+  themeIcon.alt = isDark ? "Light mode" : "Dark mode";
+}
+
+// Saat halaman pertama kali dimuat
+document.addEventListener("DOMContentLoaded", () => {
+  const darkModeFromStorage = localStorage.getItem("darkMode") === "true";
+
+  if (darkModeFromStorage) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+
+  updateThemeIcon(darkModeFromStorage);
+});
 
 toggleDarkMode.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
-  const isDardkMode = document.body.classList.contains("dark");
+  const isDarkMode = document.body.classList.contains("dark");
 
-  if (isDardkMode) {
-    themeIcon.src = "assets/sun-svgrepo-com.svg";
-    themeIcon.alt = "Light mode";
-  } else {
-    themeIcon.src = "assets/moon-dark-theme-svgrepo-com.svg";
-    themeIcon.alt = "Dark mode";
-  }
+  themeIcon.src = isDarkMode
+    ? "assets/sun-svgrepo-com.svg"
+    : "assets/moon-dark-theme-svgrepo-com.svg";
+
+  themeIcon.alt = isDarkMode ? "Light mode" : "Dark mode";
 });
