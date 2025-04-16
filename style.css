@@ -22,6 +22,24 @@
     --toggle-bg: hsl(0, 0%, 77%);
 
 }
+/* Scrollbar umum */
+body::-webkit-scrollbar,
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track,
+.container::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+body::-webkit-scrollbar-thumb,
+.container::-webkit-scrollbar-thumb {
+    background-color: rgb(121, 121, 121);
+    border-radius: 8px;
+    border: 2px solid var(--bg-color);
+}
+
 
 * {
     transition: background-color 0.2s ease;
